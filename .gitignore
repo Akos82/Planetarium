@@ -1,0 +1,4 @@
+.idea/
+*.zip
+.claude/
+!/Backend/public/build
