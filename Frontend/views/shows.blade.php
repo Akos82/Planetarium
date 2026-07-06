@@ -18,9 +18,9 @@
             <div class="relative mb-12 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white" id="slideshow">
                 @foreach($shows as $index => $show)
                 <div class="slide {{ $index === 0 ? 'block' : 'hidden' }}" data-slide="{{ $index }}">
-                    <div class="flex flex-col md:flex-row min-h-[320px]">
-                        {{-- Bal oldal: Kép / Ikon --}}
-                        <div class="md:w-2/5 bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center min-h-48 relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row md:min-h-[320px]">
+                        {{-- Kép --}}
+                        <div class="w-full h-52 md:h-auto md:w-2/5 bg-gradient-to-br from-brand-600 to-brand-800 relative overflow-hidden flex items-center justify-center flex-shrink-0">
                             @if($show->image)
                                 <img src="{{ asset('storage/' . $show->image) }}" alt="{{ $show->title }}" class="absolute inset-0 w-full h-full object-cover">
                             @else
@@ -32,7 +32,7 @@
                                 </div>
                             @endif
                         </div>
-                        {{-- Jobb oldal: Tartalom --}}
+                        {{-- Tartalom --}}
                         <div class="md:w-3/5 p-5 md:p-8 flex flex-col justify-center">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 @if($show->age_recommendation)
