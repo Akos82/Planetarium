@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('auth.login_page_title') }}</title>
+    <title>{{ __('auth.reset_page_title') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite(['../Frontend/css/app.css', '../Frontend/js/app.js'])
     <style>
@@ -45,14 +45,7 @@
 
         {{-- Kártya --}}
         <div class="bg-white rounded-2xl shadow-2xl shadow-black/40 p-8">
-            <h2 class="text-xl font-bold text-gray-800 mb-1">{{ __('auth.login_title') }}</h2>
-            <p class="text-gray-500 text-sm mb-6">{{ __('auth.no_account') }} <a href="{{ route('register') }}" class="text-brand-600 font-medium hover:underline">{{ __('auth.register_link') }}</a></p>
-
-            @if (session('status'))
-                <div class="bg-green-50 border border-green-200 text-green-700 text-sm rounded-lg px-4 py-3 mb-4">
-                    {{ session('status') }}
-                </div>
-            @endif
+            <h2 class="text-xl font-bold text-gray-800 mb-6">{{ __('auth.reset_title') }}</h2>
 
             @if ($errors->any())
                 <div class="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3 mb-4">
@@ -60,36 +53,37 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}" class="space-y-4">
+            <form method="POST" action="{{ route('password.update') }}" class="space-y-4">
                 @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{{ __('auth.email') }}</label>
-                    <input type="email" name="email" value="{{ old('email') }}" required autofocus
+                    <input type="email" name="email" value="{{ old('email', $email) }}" required
                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                            placeholder="pelda@email.com">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">{{ __('auth.password') }}</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        {{ __('auth.new_password') }}
+                        <span class="text-gray-400 font-normal">{{ __('auth.password_min') }}</span>
+                    </label>
                     <input type="password" name="password" required
                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                            placeholder="••••••••">
                 </div>
 
-                <div class="flex items-center justify-between">
-                    <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                        <input type="checkbox" name="remember" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
-                        {{ __('auth.remember') }}
-                    </label>
-                    <a href="{{ route('password.request') }}" class="text-sm text-brand-600 hover:underline">
-                        {{ __('auth.forgot_link') }}
-                    </a>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{{ __('auth.password_confirm') }}</label>
+                    <input type="password" name="password_confirmation" required
+                           class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+                           placeholder="••••••••">
                 </div>
 
                 <button type="submit"
                         class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 rounded-lg transition text-sm mt-2">
-                    {{ __('auth.login_btn') }}
+                    {{ __('auth.reset_btn') }}
                 </button>
             </form>
         </div>
