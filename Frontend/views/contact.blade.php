@@ -4,11 +4,11 @@
 @section('breadcrumb'){{ __('contact.breadcrumb') }}@endsection
 
 @section('content')
-<div class="py-14 px-4">
+<div class="py-8 md:py-14 px-4">
     <div class="max-w-4xl mx-auto">
 
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-3">{{ __('contact.title') }}</h1>
+        <div class="text-center mb-8 md:mb-12">
+            <h1 class="text-2xl md:text-4xl font-bold text-gray-800 mb-3">{{ __('contact.title') }}</h1>
             <p class="text-gray-500">{{ __('contact.subtitle') }}</p>
         </div>
 

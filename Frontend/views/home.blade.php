@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="bg-gradient-to-br from-brand-700 to-brand-900 text-white py-20 px-4">
+<section class="bg-gradient-to-br from-brand-700 to-brand-900 text-white py-12 md:py-20 px-4">
     <div class="max-w-5xl mx-auto text-center">
         <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg>
@@ -31,7 +31,7 @@
 </section>
 
 {{-- Bevezető szöveg --}}
-<section class="py-12 px-4 bg-white">
+<section class="py-8 md:py-12 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
         <div class="bg-brand-50 border-l-4 border-brand-600 rounded-r-xl p-6 text-gray-700 leading-relaxed">
             <p class="mb-3">
@@ -45,7 +45,7 @@
 </section>
 
 {{-- Árak és infók --}}
-<section class="pb-16 px-4 bg-white">
+<section class="pb-8 md:pb-16 px-4 bg-white">
     <div class="max-w-5xl mx-auto">
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">{{ __('home.fees_title') }}</h2>
         <div class="grid md:grid-cols-2 gap-6 mb-10">
@@ -89,41 +89,41 @@
 </section>
 
 {{-- Kiemelt infók --}}
-<section class="py-14 px-4 bg-gray-50 border-y border-gray-200">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+<section class="py-8 md:py-14 px-4 bg-gray-50 border-y border-gray-200">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
-            <p class="text-2xl font-bold text-gray-800 mb-1">{{ __('home.capacity_stat') }}</p>
-            <p class="text-gray-500 text-sm">{{ __('home.capacity_desc') }}</p>
+            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-1">{{ __('home.capacity_stat') }}</p>
+            <p class="text-gray-500 text-xs md:text-sm">{{ __('home.capacity_desc') }}</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+        <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <p class="text-2xl font-bold text-gray-800 mb-1">{{ __('home.hours_stat') }}</p>
-            <p class="text-gray-500 text-sm">{{ __('home.hours_desc') }}</p>
+            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-1">{{ __('home.hours_stat') }}</p>
+            <p class="text-gray-500 text-xs md:text-sm">{{ __('home.hours_desc') }}</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+        <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
             </div>
-            <p class="text-2xl font-bold text-gray-800 mb-1">{{ __('home.films_stat') }}</p>
-            <p class="text-gray-500 text-sm">{{ __('home.films_desc') }}</p>
+            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-1">{{ __('home.films_stat') }}</p>
+            <p class="text-gray-500 text-xs md:text-sm">{{ __('home.films_desc') }}</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+        <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
             </div>
-            <p class="text-2xl font-bold text-gray-800 mb-1">6. {{ __('about.stat_floor') }}</p>
-            <p class="text-gray-500 text-sm">Sapientia EMTE, Csíkszereda</p>
+            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-1">6. {{ __('about.stat_floor') }}</p>
+            <p class="text-gray-500 text-xs md:text-sm">Sapientia EMTE, Csíkszereda</p>
         </div>
     </div>
 </section>
 
 {{-- Filmeink --}}
-<section class="py-14 px-4 bg-white">
+<section class="py-8 md:py-14 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">{{ __('about.films_title') }}</h2>
         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
@@ -139,7 +139,7 @@
 </section>
 
 {{-- Fontos figyelmeztetés --}}
-<section class="pb-14 px-4 bg-white">
+<section class="pb-8 md:pb-14 px-4 bg-white">
     <div class="max-w-3xl mx-auto text-center">
         <div class="bg-brand-700 text-white rounded-2xl p-8">
             <h2 class="text-xl md:text-2xl font-bold mb-3">

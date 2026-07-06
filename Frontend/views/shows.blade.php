@@ -4,11 +4,11 @@
 @section('breadcrumb'){{ __('shows.breadcrumb') }}@endsection
 
 @section('content')
-<div class="py-14 px-4">
+<div class="py-8 md:py-14 px-4">
     <div class="max-w-5xl mx-auto">
 
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-3">{{ __('shows.title') }}</h1>
+        <div class="text-center mb-8 md:mb-12">
+            <h1 class="text-2xl md:text-4xl font-bold text-gray-800 mb-3">{{ __('shows.title') }}</h1>
             <p class="text-gray-500 max-w-xl mx-auto">{{ __('shows.subtitle') }}</p>
         </div>
 
@@ -33,7 +33,7 @@
                             @endif
                         </div>
                         {{-- Jobb oldal: Tartalom --}}
-                        <div class="md:w-3/5 p-8 flex flex-col justify-center">
+                        <div class="md:w-3/5 p-5 md:p-8 flex flex-col justify-center">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 @if($show->age_recommendation)
                                     <span class="bg-brand-100 text-brand-700 text-xs font-semibold px-3 py-1 rounded-full">{{ $show->age_recommendation }}</span>

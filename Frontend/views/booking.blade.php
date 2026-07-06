@@ -4,11 +4,11 @@
 @section('breadcrumb'){{ __('booking.breadcrumb') }}@endsection
 
 @section('content')
-<div class="py-14 px-4">
+<div class="py-8 md:py-14 px-4">
     <div class="max-w-6xl mx-auto">
 
-        <div class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-gray-800 mb-3">{{ __('booking.title') }}</h1>
+        <div class="text-center mb-8 md:mb-10">
+            <h1 class="text-2xl md:text-4xl font-bold text-gray-800 mb-3">{{ __('booking.title') }}</h1>
             <p class="text-gray-500 max-w-xl mx-auto">{{ __('booking.subtitle') }}</p>
         </div>
 
@@ -19,7 +19,7 @@
 
     {{-- Bal: Foglalások listája --}}
     <div class="lg:col-span-2 space-y-4">
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="bg-white border border-gray-200 rounded-2xl p-4 md:p-6 shadow-sm">
             <h2 class="text-lg font-bold text-gray-800 mb-5 flex items-center gap-2">
                 <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 {{ __('booking.admin_title') }}
@@ -158,7 +158,7 @@
                     @csrf
 
                     {{-- 1. Kapcsolattartói adatok --}}
-                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-4 md:p-6 shadow-sm">
                         <h2 class="text-lg font-bold text-gray-800 mb-5 flex items-center gap-2">
                             <span class="w-7 h-7 bg-brand-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
                             {{ __('booking.form_section1') }}
@@ -225,16 +225,16 @@
                         <div class="mt-5">
                             <label class="block text-sm font-medium text-gray-700 mb-3">{{ __('booking.form_time_label') }} <span class="text-red-500">*</span></label>
                             <p class="text-xs text-gray-500 mb-3">{!! __('booking.form_time_hint') !!}</p>
-                            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                            <div class="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-9 gap-2">
                                 @foreach(['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00'] as $slot)
-                                <label class="flex items-center justify-center gap-2 border rounded-lg px-3 py-2.5 cursor-pointer text-sm font-medium transition
+                                <label class="flex items-center justify-center border rounded-lg px-2 py-3 cursor-pointer text-sm font-medium transition
                                              {{ old('booking_time') === $slot ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-gray-200 hover:border-brand-400 hover:bg-brand-50 text-gray-700' }}
                                              has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50 has-[:checked]:text-brand-700">
                                     <input type="radio" name="booking_time" value="{{ $slot }}" class="sr-only" {{ old('booking_time') === $slot ? 'checked' : '' }}>
                                     {{ $slot }}
                                 </label>
                                 @endforeach
-                                <label class="flex items-center justify-center gap-2 border rounded-lg px-3 py-2.5 cursor-pointer text-sm font-medium transition col-span-3 sm:col-span-2
+                                <label class="flex items-center justify-center gap-2 border rounded-lg px-3 py-2.5 cursor-pointer text-sm font-medium transition col-span-4 sm:col-span-4 lg:col-span-1
                                              {{ old('booking_time') && !in_array(old('booking_time'), ['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00']) ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-gray-200 hover:border-brand-400 hover:bg-brand-50 text-gray-700' }}
                                              has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50 has-[:checked]:text-brand-700">
                                     <input type="radio" name="booking_time" value="other" id="time-other-radio" class="sr-only" {{ old('booking_time') && !in_array(old('booking_time'), ['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00']) ? 'checked' : '' }}>
