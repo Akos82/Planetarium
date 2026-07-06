@@ -141,10 +141,10 @@
     </main>
 
     {{-- Lábléc --}}
-    <footer class="bg-gray-800 text-gray-300 mt-16">
-        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-2 mb-3">
+    <footer class="bg-gray-800 text-gray-300 mt-10 md:mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8 md:py-10 grid md:grid-cols-3 gap-6 md:gap-8">
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-2 mb-3 justify-center md:justify-start">
                     <div class="w-8 h-8 bg-brand-500 rounded-full flex items-center justify-center">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
                     </div>

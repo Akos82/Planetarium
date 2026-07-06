@@ -15,7 +15,7 @@
 @auth
 @if(auth()->user()->is_admin)
 {{-- ===== ADMIN NÉZET ===== --}}
-<div class="grid lg:grid-cols-3 gap-8">
+<div class="grid lg:grid-cols-3 gap-6 md:gap-8">
 
     {{-- Bal: Foglalások listája --}}
     <div class="lg:col-span-2 space-y-4">
@@ -149,10 +149,11 @@
             <p class="text-amber-800 text-sm"><strong>{{ __('booking.alert') }}</strong> {{ __('booking.alert_text') }}</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
+        <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
 
             {{-- ===== BAL: FORM ===== --}}
-            <div class="lg:col-span-2 space-y-6">
+            {{-- Mobilon a sidebar (naptár) jelenik meg először, ld. order-2/order-1 --}}
+            <div class="lg:col-span-2 space-y-6 order-2 lg:order-1">
 
                 <form method="POST" action="{{ route('booking.store') }}" id="booking-form">
                     @csrf
@@ -225,7 +226,7 @@
                         <div class="mt-5">
                             <label class="block text-sm font-medium text-gray-700 mb-3">{{ __('booking.form_time_label') }} <span class="text-red-500">*</span></label>
                             <p class="text-xs text-gray-500 mb-3">{!! __('booking.form_time_hint') !!}</p>
-                            <div class="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-9 gap-2">
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
                                 @foreach(['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00'] as $slot)
                                 <label class="flex items-center justify-center border rounded-lg px-2 py-3 cursor-pointer text-sm font-medium transition
                                              {{ old('booking_time') === $slot ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-gray-200 hover:border-brand-400 hover:bg-brand-50 text-gray-700' }}
@@ -234,7 +235,7 @@
                                     {{ $slot }}
                                 </label>
                                 @endforeach
-                                <label class="flex items-center justify-center gap-2 border rounded-lg px-3 py-2.5 cursor-pointer text-sm font-medium transition col-span-4 sm:col-span-4 lg:col-span-1
+                                <label class="flex items-center justify-center gap-2 border rounded-lg px-3 py-2.5 cursor-pointer text-sm font-medium transition col-span-3 sm:col-span-4
                                              {{ old('booking_time') && !in_array(old('booking_time'), ['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00']) ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-gray-200 hover:border-brand-400 hover:bg-brand-50 text-gray-700' }}
                                              has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50 has-[:checked]:text-brand-700">
                                     <input type="radio" name="booking_time" value="other" id="time-other-radio" class="sr-only" {{ old('booking_time') && !in_array(old('booking_time'), ['08:00','09:00','10:00','11:00','12:00','16:00','17:00','18:00']) ? 'checked' : '' }}>
@@ -284,7 +285,7 @@
 
                     {{-- 4. Előadás kiválasztása --}}
                     @if($shows->isNotEmpty())
-                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-4 md:p-6 shadow-sm">
                         <h2 class="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
                             <span class="w-7 h-7 bg-brand-600 text-white rounded-full flex items-center justify-center text-xs font-bold">4</span>
                             {{ __('booking.form_section4') }}
@@ -323,7 +324,7 @@
                     @endif
 
                     {{-- 5. Megjegyzés --}}
-                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-4 md:p-6 shadow-sm">
                         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                             <span class="w-7 h-7 bg-brand-600 text-white rounded-full flex items-center justify-center text-xs font-bold">5</span>
                             {{ __('booking.form_section5') }}
@@ -344,7 +345,8 @@
             </div>
 
             {{-- ===== JOBB: Naptár + info ===== --}}
-            <div class="space-y-5">
+            {{-- Mobilon ez kerül felülre (order-1), desktopon jobbra (order-2) --}}
+            <div class="space-y-5 order-1 lg:order-2">
 
                 {{-- Naptár --}}
                 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">

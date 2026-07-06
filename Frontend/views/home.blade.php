@@ -141,7 +141,7 @@
 {{-- Fontos figyelmeztetés --}}
 <section class="pb-8 md:pb-14 px-4 bg-white">
     <div class="max-w-3xl mx-auto text-center">
-        <div class="bg-brand-700 text-white rounded-2xl p-8">
+        <div class="bg-brand-700 text-white rounded-2xl p-6 md:p-8">
             <h2 class="text-xl md:text-2xl font-bold mb-3">
                 {{ __('home.cta_title') }}
             </h2>
