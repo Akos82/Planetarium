@@ -10,6 +10,7 @@
         body { background: #0f172a; }
         .stars {
             position: fixed; inset: 0; z-index: 0;
+            pointer-events: none;
             background-image:
                 radial-gradient(1px 1px at 10% 15%, white 0%, transparent 100%),
                 radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,.7) 0%, transparent 100%),
